@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Thaskara</title>
+
+    <!-- Import semantic ui and jquery -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" />
+    <!-- Import JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Import Semantic JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+
+    <!-- Import the local JS -->
+    <script src="JS/requests.js"></script>
+    <script src="JS/interaction.js"></script>
+    <script src="JS/leader.js"></script>
+    <script src="JS/resources.js"></script>
+    <script src="JS/factions.js"></script>
+    <script src="JS/time.js"></script>
+
+</head>
+<body>
+    <div class="ui menu"></div>
+
+    <!-- Holds the Ruler, Resources, and Time information -->
+    <div class="ui container">
+        <div class="ui center aligned three column grid">
+            <div class="left aligned column">
+                <h2 class="ui center aligned dividing header">Ruler</h2>
+                <h3 id="leaderName" class="ui left aligned header"></h3>
+                <div class="ui labels">
+                    <div class="ui label">Influence<div class="detail" id="leaderInf">4</div></div>
+                    <div class="ui label">Wealth<div class="detail" id="leaderWealth">4</div></div>
+                    <div class="ui label">Might<div class="detail" id="leaderMight">4</div></div>
+                </div>
+            </div>
+            <div class="column">
+                <h2 class="ui dividing header">Resources</h2>
+                <div class="ui three column grid">
+                    <div class="column"><div class="ui pink label">Influence<div id="totalInfluence" class="detail">4</div></div></div>
+                    <div class="column"><div class="ui olive label">Wealth<div id="totalWealth" class="detail">4</div></div></div>
+                    <div class="column"><div class="ui blue label">Might<div id="totalMight" class="detail">4</div></div></div>
+                </div>
+            </div>
+            <div class="column">
+                <h2 class="ui dividing header">Date</h2>
+                <h3 id="dateTime"></h3>
+                <button id="decrementSpeed" class="ui compact icon button "><i class="backward icon"></i></button>
+                <button id="togglePause" class="ui compact red icon button "><i class="pause icon"></i></button>
+                <button id="incrementSpeed" class="ui compact icon button "><i class="forward icon"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Holds Information about the empire's lords, econemy, and military -->
+    <div class="ui container">
+        <div class="ui pointing secondary demo menu">
+            <div class="active purple item" data-tab="first">Lords</div>
+            <div class="red item" data-tab="second">Military</div>
+            <div class="green item" data-tab="third">Econemy</div>
+        </div>
+        <div class="ui active tab segment" data-tab="first"> <!-- Lords -->
+            <h3>Lords</h3>
+            <table class="ui selectable inverted table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Loyalty</th>
+                        <th>Influence</th>
+                    </tr>
+                </thead>
+                <tbody id="factionRows">
+                    <tr>
+                        <td>Aristocrats</td>
+                        <td>35%</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td>Aristocrats</td>
+                        <td>35%</td>
+                        <td>60%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ui tab segment" data-tab="second"> <!-- Military -->
+            <h3>Military</h3>
+        </div>
+        <div class="ui tab segment" data-tab="third"> <!-- Econemy -->
+            <h3>Econemy</h3>
+        </div>
+        <button id="events">Modal</button>
+    </div>
+
+
+    <!-- Modal for events -->
+    <div class="ui modal">
+        <div id="eventHeader" class="header">Default Event</div>
+        <div id="eventContent" class="content">
+            <p>Hello Jim,</p>
+            <p>Hello Dwight</p>
+        </div>
+        <div id="eventActions" class="actions">
+            <div class="ui black deny button">
+                Denied
+            </div>
+            <div class="ui positive right labeled icon button">
+                Accepted
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
